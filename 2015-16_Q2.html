@@ -1,0 +1,109 @@
+<html>
+
+<head>
+     <meta charset="utf-8">
+  <title>CT404 X3D Assignment</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+    <script src="https://www.x3dom.org/download/1.5/x3dom-full.js"></script>
+		<link rel="stylesheet" href="https://www.x3dom.org/download/1.5/x3dom.css">
+    </link>
+</head>
+
+<body>
+    <div class="container">
+        <div style="text-align: center;">
+<h1>2015/2016 Q2 X3D Model</h1>
+    <h2>By Diarmuid age 22</h2>
+    
+        </div>
+    </div>
+    
+    <x3d width='800' height='800'>
+        <scene DEF='scene'>
+            <Group Def='leg'>
+                
+                         <Shape>
+<Appearance>
+    <Material diffuseColor='0.4 0.2 0'></Material>
+    
+</Appearance>
+<Extrusion convex='TRUE' beginCap='TRUE' endCap='TRUE'
+           scale="1 1, 2 2"
+crossSection='.5 .5, .5 -.5, -.5 -.5,
+-.5 .5, .5 .5'
+spine=' 0 0 0, 0 15 0' />
+</Shape>
+                         
+            </Group>
+            <Transform translation="15 0 0">
+            <Shape USE="leg"></Shape>
+                </Transform>
+            
+            <Transform translation="15 0 -15">
+            <Shape USE="leg"></Shape>
+                </Transform>
+            
+            <Transform translation="0 0 -15">
+            <Shape USE="leg"></Shape>
+                </Transform>
+            
+            <!-- buffers -->
+            <Group Def="buffer">
+            <Transform translation="0 15 0">
+            <Shape>
+                <Appearance>
+                    <Material diffuseColor="1 1 1">
+                        
+                    </Material>
+                </Appearance>
+                <Cylinder radius=".875" height=".5"></Cylinder>
+                </Shape>
+            </Transform>
+                </Group>
+            
+            <Transform translation="15 0 0">
+            <Shape USE="buffer"></Shape>
+                </Transform>
+            
+            <Transform translation="15 0 -15">
+            <Shape USE="buffer"></Shape>
+                </Transform>
+            
+            <Transform translation="0 0 -15">
+            <Shape USE="buffer"></Shape>
+                </Transform>
+            
+            <!-- table top -->
+            
+            <Transform translation="7.5 15.5 -7.5">
+            <Shape>
+                <Appearance>
+                    <Material transparency="0.5">
+                        
+                    </Material>
+                </Appearance>
+                <Box size="20 .5 20"></Box>
+                </Shape>
+            </Transform>
+            
+                     <Viewpoint id="mainCamera" description= 'camera'
+                           fieldOfView='0.985' position='0 8 75' orientation='0 0 0 .2235'></Viewpoint>    
+        </scene>
+    </x3d>
+</body>
+</html>
