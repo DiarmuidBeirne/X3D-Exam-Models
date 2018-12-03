@@ -2,7 +2,7 @@
 
 <head>
      <meta charset="utf-8">
-  <title>X3D</title>
+  <title>CT404 X3D Assignment</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -27,16 +27,35 @@
 <body>
     <div class="container">
         <div style="text-align: center;">
-<h1>X3d Models</h1>
-            
-            <a href=/2015-16_Q2.html><h2>2015-16_Q2</h2></a>
-            <br>
-            <a href=/2017-18_Q3.html><h2>2017-18_Q3</h2></a>
-    
+<h1>2015/2016 Q2 X3D Model</h1>
+    <h2>By Diarmuid age 22</h2>
     
         </div>
     </div>
     
+    <x3d width='800' height='800'>
+        <scene DEF='scene'>
+            <Group Def='leg'>
+                
+                         <Shape>
+<Appearance>
+    <Material diffuseColor='0.4 0.2 0'></Material>
     
+</Appearance>
+<Extrusion convex='FALSE' 
+           scale="1 1, 1 1, .75 .75"
+           creaseAngle='1.5' 
+           orientation='0 0 0 0, 0 0 0 0, 0 1 0 1.025'
+crossSection='-.5 2, .5 2, 1 1,
+1.5 0, 1 -1, .5 -2, -.5 -2, -1 -1, -1.5 0, -1 1, -.5 -2'
+spine='0 0 0, 0 1 0, 0 1 0, 0 2 0' />
+</Shape>
+                         
+            </Group>
+            
+                     <Viewpoint position="8.77795 4.59282 0.13306" orientation="-0.18085 0.96979 0.16368 1.57838" 
+	zNear="5.70930" zFar="14.68278" description="camera"></Viewpoint>   
+        </scene>
+    </x3d>
 </body>
 </html>
