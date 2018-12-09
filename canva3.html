@@ -1,0 +1,29 @@
+<html>
+<head>
+<script>
+var x=200, y=200, direction=1;
+function draw() {
+var canvas = document.getElementById("canvas");
+var context = canvas.getContext('2d');
+context.save();
+// over-write previous content, with a grey rectangle
+context.fillStyle="#DDDDDD";
+context.fillRect(0,0,600,600);
+    if(x== 0) direction =1;
+    if(x == canvas.width -50) direction = -1;
+    
+    x= x + direction;
+    
+context.translate(x,y);
+// draw a purple rectangle, size 50,50
+context.fillStyle="#CC00FF";
+context.fillRect(0,0,50,50);
+context.restore();
+window.setTimeout("draw();",1000/30);
+}
+</script>
+</head>
+<body onload="draw();">
+<canvas id="canvas" width="600" height="600"></canvas>
+</body>
+</html>

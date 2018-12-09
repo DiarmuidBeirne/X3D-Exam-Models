@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function attachEvents() {
+window.onkeydown= function(event) {
+var key = String.fromCharCode(event.keyCode || event.charCode);
+draw(key);
+}
+}
+    
+    var X = 140; //initial values for x and y
+    var Y = 140;
+    
+    
+function draw(key) {
+var canvas = document.getElementById("canvas");
+var context = canvas.getContext('2d');
+    // to do: clear existing graphics on the Canvas
+    context.fillStyle="rgb(255,255,255)";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    
+
+    // to do: draw a rectangle whose position changes based on key
+    // that was pressed (W=up, A=left, D=right, S=down)
+    // to do: don't allow the rectangle to pass outside of the
+    // bounds of the Canvas
+    context.fillStyle="rgb(255,0,0)"
+    
+    if(key == 'A')
+        {   
+            if(X > 0){
+            X -= 1;}
+            context.fillRect(X, Y, 20 ,20)
+            
+        }
+    else if(key == 'W')
+        {   
+            if(Y > 0){
+            Y -= 1;}
+            context.fillRect(X, Y, 20 ,20);
+            
+        }
+    
+    else if(key == 'D')
+        {   
+            if(X < 280){
+            X += 1; }
+            context.fillRect(X, Y, 20 ,20);
+           
+        }
+    else if(key == 'S')
+        {   
+            if(Y < 280){
+            Y += 1;}
+            context.fillRect(X, Y, 20 ,20);
+            
+        }
+    else{
+        context.fillRect(X, Y, 20, 20);
+    }
+}
+</script>
+</head>
+<body onload="attachEvents();">
+   <p> Press any key to start</p>
+<canvas id="canvas" width="300" height="300"></canvas>
+</body>
+</html>
