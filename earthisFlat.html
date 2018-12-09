@@ -1,0 +1,50 @@
+<html>
+
+<head>
+   <title>X3D Sand Timer</title>
+   <script src="https://www.x3dom.org/download/1.5/x3dom-full.js"></script>
+   <link rel="stylesheet" href="https://www.x3dom.org/download/1.5/x3dom.css">
+   </link>
+</head>
+
+<body>
+   <x3d width='1400' height=600>
+       <scene DEF='scene'>
+           <Background backUrl='background.jpeg'></Background>
+
+           <Shape>
+               <appearance>
+                   <ImageTexture url="earth.jpg" />
+               </appearance>
+               <Sphere radius="2" />
+           </Shape>
+
+           <Transform DEF="Orbit">
+           <Transform DEF="Moon">
+               <Transform translation="4 0 0">
+                   <Shape>
+                       <appearance>
+                           <ImageTexture url="moon.jpg" />
+                       </appearance>
+                       <Sphere radius="0.6" />
+                   </Shape>
+               </Transform>
+               </Transform>
+           </Transform>
+
+           <timeSensor DEF='clock' cycleInterval='10' loop='true'></timeSensor>
+           <orientationInterpolator DEF='spin' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0  0 1 0 -1.57079  0 1 0 -3.14159  0 1 0 -4.71239  0 1 0 -6.28317'></orientationInterpolator>
+           <OrientationInterpolator DEF='MoonRotate' key='0 0.5 1' keyValue='1 0 0 0, 1 0 0 3.14, 1 0 0 6.28' />
+           <Route fromNode="clock" fromField="fraction_changed" toNode="spin" toField="set_fraction"> </Route>
+           <Route fromNode="spin" fromField="value_changed" toNode="Orbit" toField="set_rotation"> </Route>
+
+           <Route fromNode="clock" fromField="fraction_changed" toNode="MoonRotate" toField="set_fraction"> </Route>
+           <Route fromNode="MoonRotate" fromField="value_changed" toNode="Moon" toField="set_rotation"></Route>
+
+
+
+       </scene>
+   </x3d>
+</body>
+
+</html>
